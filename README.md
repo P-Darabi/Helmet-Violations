@@ -85,12 +85,18 @@ Contributions are welcome! Feel free to fork this repository and submit pull req
 ## License
 This project is licensed under the MIT License.
 
-![Demo](output/result.gif)
-
 ### Highlights of the Update:
 1. **Accurate File Structure**: Matches the project layout visible in the image.
 2. **Kaggle Dataset Link**: Directly references your dataset.
 3. **Usage Details**: Includes information on how to run the project and what to expect as output.
 4. **Future Enhancements**: Lists possible improvements.
 
-Let me know if you need further refinements!
+![Demo](output/result.gif)
+
+## 🔗 Additional Resources
+
+- 🎥 **Project Demo**: Watch the live demonstration of this project on [YouTube](https://www.youtube.com/watch?v=vTjrQVMCbJ4).
+- 🌐 **Kaggle Notebook**: Interested in a Kaggle environment? Explore the notebook [here](https://www.kaggle.com/code/pkdarabi/Helmet-Violations).
+- 🌐 **Dataset Source**: Available on [Kaggle](https://www.kaggle.com/datasets/pkdarabi/helmet).
+- 🤝 **Connect on LinkedIn**: Have questions or looking for collaboration? Let's connect on [LinkedIn](www.linkedin.com/in/p-karimi-darabi).
+**Let me know if you need further refinements!**
