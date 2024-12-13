@@ -91,7 +91,7 @@ This project is licensed under the MIT License.
 3. **Usage Details**: Includes information on how to run the project and what to expect as output.
 4. **Future Enhancements**: Lists possible improvements.
 
-![Demo](output/result.gif)
+![Demo](https://raw.githubusercontent.com/P-Darabi/Helmet-Violations/main/output/result.gif)
 
 ## 🔗 Additional Resources
 
