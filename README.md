@@ -14,16 +14,15 @@ The dataset used in this project is hosted on Kaggle: [Helmet Dataset](https://w
 
 ## File Structure
 ```plaintext
-project/
+Helmet-Violations/
 ├── img/                      # Contains sample images
 ├── output/                   # Directory for output files (e.g., text files)
 ├── videos/                   # Input video files
 ├── yolo-weights/             # Directory for YOLO weight files
-├── result.mp4                # Annotated video output
 ├── main.py                   # Main script for video processing
 ├── README.md                 # Project documentation
 ├── requirements.txt          # List of required Python libraries
-└── Training.ipynb            # Training notebook
+└── helmet-violations.ipynb            # Training notebook
 ```
 
 ## Prerequisites
@@ -39,8 +38,8 @@ project/
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/helmet-violation-tracker.git
-   cd helmet-violation-tracker
+   git clone https://github.com/P-Darabi/Helmet-Violations.git
+   cd helmet-violations
    ```
 
 2. Install dependencies:
@@ -70,8 +69,8 @@ project/
 - **Text File**:
   ```plaintext
   Detected Plate Numbers:
-  ABC1234
-  XYZ5678
+   L09AQ3439
+   KL 09AQ3439
   ```
 
 ## Future Enhancements
