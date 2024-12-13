@@ -1,102 +1,96 @@
 ```markdown
-# Object Detection and Tracking for Helmet Violations
+# Helmet Violation Detection with License Plate Recognition
 
 ## Overview
-This application detects and tracks individuals riding motorcycles or scooters without helmets in video footage. It also extracts license plate information of violators using Optical Character Recognition (OCR). The application provides a real-time visual display of violations and outputs structured data for further analysis.
+This project detects and tracks helmet violations in video footage and extracts license plate numbers of violators using YOLO and PaddleOCR. It provides annotated output videos and a text file containing detected license plate numbers for further analysis.
 
 ## Features
-- **Helmet Violation Detection:** Uses YOLO or similar pre-trained object detection models to identify individuals not wearing helmets.
-- **Object Tracking:** Tracks detected vehicles and riders across video frames using tracking algorithms like SORT or DeepSORT.
-- **License Plate Recognition:** Extracts license plate information from violating vehicles using Tesseract OCR or similar libraries.
-- **Real-Time Visualization:** Displays the video with bounding boxes around violators and overlays extracted license plate numbers.
-- **Structured Output:** Saves violation details (e.g., license plate numbers, timestamps) in a CSV or JSON file for record-keeping or further processing.
+- **Helmet Violation Detection**: Identifies motorcyclists not wearing helmets using YOLO.
+- **License Plate Recognition**: Extracts license plate information using PaddleOCR.
+- **Annotated Video Output**: Generates a video with bounding boxes around violators and their license plate numbers displayed.
+- **Structured Output**: Saves license plate details in a text file.
+
+## Dataset
+The dataset used in this project is hosted on Kaggle: [Helmet Dataset](https://www.kaggle.com/datasets/pkdarabi/helmet/data). It contains annotated images for training and validating the detection model.
+
+## File Structure
+```plaintext
+project/
+├── img/                      # Contains sample images
+├── output/                   # Directory for output files (e.g., text files)
+├── videos/                   # Input video files
+├── yolo-weights/             # Directory for YOLO weight files
+├── result.mp4                # Annotated video output
+├── main.py                   # Main script for video processing
+├── README.md                 # Project documentation
+├── requirements.txt          # List of required Python libraries
+└── Training.ipynb            # Training notebook
+```
 
 ## Prerequisites
 ### Software Requirements
 - Python 3.8 or later
-- Required Python libraries:
-  - OpenCV
-  - numpy
-  - torch
-  - torchvision
-  - pytesseract
-  - matplotlib
-- YOLO (You Only Look Once) or any similar object detection framework.
-- Tesseract OCR installation for license plate recognition.
+- Required Python libraries (install using `requirements.txt`):
+  - `torch`, `opencv-python`, `numpy`, `Pillow`, `matplotlib`, `paddleocr`
+- YOLO weights for helmet detection.
 
 ### Hardware Requirements
-- A GPU-enabled machine is recommended for faster object detection and tracking.
-- Sufficient storage for input video files and output results.
+- A GPU-enabled machine for faster processing is recommended.
 
 ## Installation
-1. Clone this repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/helmet-violation-tracker.git
    cd helmet-violation-tracker
    ```
 
-2. Install the required Python packages:
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Install Tesseract OCR:
-   - **Ubuntu:**
-     ```bash
-     sudo apt-get install tesseract-ocr
-     ```
-   - **Windows:**
-     Download and install Tesseract from [Tesseract OCR GitHub](https://github.com/tesseract-ocr/tesseract).
+3. Place the YOLO weight file (`best.pt`) in the `yolo-weights/` directory.
 
-4. Download YOLO weights:
-   - Obtain pre-trained YOLO weights from the [YOLO website](https://pjreddie.com/darknet/yolo/) or use a compatible object detection model.
+4. Install PaddleOCR:
+   ```bash
+   pip install paddleocr
+   ```
 
 ## Usage
-1. Place your input video files in the `videos/` directory.
-2. Run the application using the command line:
+1. Place the input video file in the `videos/` directory.
+2. Run the detection script:
    ```bash
-   python main.py --input videos/sample_video.mp4 --output results/
+   python main.py
    ```
-3. The application will:
-   - Process the video to detect and track helmet violations.
-   - Display the video with bounding boxes and license plate information in real-time.
-   - Save the extracted violation details in the specified output directory.
+3. Output:
+   - The processed video will be saved as `result.mp4`.
+   - License plate numbers will be stored in `output/plate_numbers.txt`.
 
 ## Example Output
-- **Video Playback:** The processed video displays bounding boxes around violators and prints the extracted license plate number below the frame.
-- **CSV Output:** Example of violation details stored in `results/violations.csv`:
-  ```csv
-  Frame, License Plate, Violation
-  12, ABC1234, No Helmet
-  45, XYZ5678, No Helmet
+- **Annotated Video**: Bounding boxes around violators and their license plate numbers.
+- **Text File**:
+  ```plaintext
+  Detected Plate Numbers:
+  ABC1234
+  XYZ5678
   ```
 
-## File Structure
-```plaintext
-helmet-violation-tracker/
-│
-├── videos/               # Input video files
-├── results/              # Output processed videos and results
-├── src/
-│   ├── detection.py      # Object detection and tracking logic
-│   ├── ocr.py            # License plate recognition
-│   ├── utils.py          # Helper functions
-│   └── main.py           # Main application script
-├── requirements.txt      # List of required Python libraries
-└── README.md             # Project documentation
-```
-
 ## Future Enhancements
-- Enable support for live video feeds from cameras or CCTV.
-- Deploy as a web-based or mobile application for broader accessibility.
-- Improve OCR accuracy for challenging scenarios such as poor lighting or occlusions.
-- Add a reporting dashboard for summarized violation statistics.
+- Add real-time detection from live video feeds or CCTV.
+- Enhance OCR accuracy for challenging conditions.
+- Create a web-based dashboard for analytics.
 
 ## Contributions
-We welcome contributions! Feel free to fork the repository and submit a pull request with improvements or feature suggestions.
+Contributions are welcome! Feel free to fork this repository and submit pull requests.
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.
 ```
 
-Feel free to modify this README to suit your project's specific needs. Let me know if you need help with anything else!
+### Highlights of the Update:
+1. **Accurate File Structure**: Matches the project layout visible in the image.
+2. **Kaggle Dataset Link**: Directly references your dataset.
+3. **Usage Details**: Includes information on how to run the project and what to expect as output.
+4. **Future Enhancements**: Lists possible improvements.
+
+Let me know if you need further refinements!
