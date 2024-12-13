@@ -1,4 +1,3 @@
-```markdown
 # Helmet Violation Detection with License Plate Recognition
 
 ## Overview
@@ -85,7 +84,8 @@ Contributions are welcome! Feel free to fork this repository and submit pull req
 
 ## License
 This project is licensed under the MIT License.
-```
+
+![Demo](output/result.gif)
 
 ### Highlights of the Update:
 1. **Accurate File Structure**: Matches the project layout visible in the image.
